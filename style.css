@@ -1,0 +1,101 @@
+.page-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    width: 100%;
+    background-color:sandybrown;
+    /* position: fixed; */
+    top: 0;
+    left: 0;
+  }
+  
+  .logo img{
+    width: 232px;
+    height: auto;
+    border: 3px solid aqua;
+    margin: 50px;
+    }
+  
+  .company-name {
+  text-align: center;
+  font-size: 70px;
+  background-color: wheat;
+  min-width: 160px;
+  padding: 10px;
+  margin: 50px;
+  border: 6px solid azure;
+}
+
+.caption{
+    text-align: center;
+}
+
+p {
+    color:darkgreen;
+}
+
+h2{
+  margin:20px;
+}
+
+p.about{
+    color:black;
+    font-family: "Gill Sans", sans-serif; 
+    font-size: 15px;
+    margin:20px;
+    text-align: justify;
+}
+
+ol img
+{
+  margin: 20px;
+  padding: 10px;
+}
+
+.services{
+  margin-right: 20px;
+}
+#fillin{
+    margin: 20px;
+    padding: 10px;
+    border-radius: 30px;
+    background-color: lightpink;
+    width: 600px;
+    height: 260px;
+}
+
+button{
+  /* float:right;
+  margin-right: 240px; */
+  position: relative;
+  left: 210px;
+}
+
+#tabular{
+    background-color:tomato;
+    width: 550px;
+    height: 250px;
+    margin: 20px;
+    padding: 10px;
+
+}
+
+@media screen and (max-width:480px) {
+  .company-name {
+    font-size: 20px;
+}
+}
+
+@media screen and (min-width:480px) and (max-width:960px) {
+  .company-name {
+    font-size: 40px;
+}
+}
+
+@media print{
+  #tabular{
+    background-color:transparent;
+  }
+}
+
+

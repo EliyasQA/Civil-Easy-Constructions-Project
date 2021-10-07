@@ -1,0 +1,10 @@
+console.log(abc);
+Uncaught ReferenceError: abc is not defined
+
+const pi;
+pi=3.14;
+Uncaught SyntaxError: Missing initializer in const declaration
+
+let str1;
+console.log(str1.length);
+Uncaught TypeError: Cannot read property 'length' of undefined

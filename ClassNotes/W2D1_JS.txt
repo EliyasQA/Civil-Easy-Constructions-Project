@@ -1,0 +1,218 @@
+About Javascript:
+----------------
+Javascript(JS) is nowhere related to Java.
+JS is client side scripting language, also it can be used as a server side scripting language through means of Nodejs.
+JS is typically interpreted but can be JIT(Just In Time) compile as well.
+	- During interpretation JS code is converted into machine code on the fly as the browser tries to execute the code
+	- During compilation JS code is converted into Byte code and then browser executes the code. Running as byte code shows performance improvements and the code can be better optimized
+	  as the browser can understand what piece of code keeps running more.
+
+
+How to do comment?
+//single line comment
+
+/*multi
+*line
+*comment*/
+
+How to print a string or number?			Equivalent Wrapper Objects
+console.log("Ellias"); o/p: Ellias			---------------------------
+console.log(123); o/p: 123				console.log(typeof new String("abc")); o/p: string
+console.log(typeof true); o\p: boolean			console.log(typeof new Number(456)); o/p: number
+							console.log(typeof new Boolean(false)); o/p: boolean
+
+Variables:
+---------
+Variables can be decalred in three ways:
+1) fName="Ellias";
+2) var fName="Ellias";
+3) let fName="Ellias";
+
+var vs let:
+	var								let
+---------------------------------------------|----------------------------------------------------
+1. Old way of declaring a variable	     |	Introduced in ECMA 2015 or ES6.
+2. Redeclaration is possible.		     |	Redeclaration is not possible, but can be redefined.
+	eg. var fName="abcde";		     |		let lName="fareed"
+	    var fName="fghij";		     |		lName="deen"
+3. Scoping is limited. Only global and 	     |	All the three scopings are possible. global, function and block
+	function			     |
+4. Hoisting is possible. i.e variables can   |	Hoisting is not possible using let.
+   can be used before they declared. 	     |
+	eg. console.log(mName);		     |
+	    var mName="du";		     |
+	o/p:Undefined			     |
+   Note: Only declaration is hoisted not the |
+	 definition.			     |
+
+
+Scoping:
+--------
+
+//Global scoping- can be called from anywhere
+	var fname="Ellias";
+	let lname="Fareedudeen";
+	console.log(fname" "+lname);
+
+function newFunction(){
+	var mname="Rufamias"; //function level scoping variable
+	console.log(fname);//global variable is accessible inside a function
+	console.log(mname);//funtion variable is accessible
+	if(true)
+	{+
+		console.log(mname);//function variable is accessbile from the block
+		var init="E"; // block level scoping variable
+		console.log(init);//this can be accessible obvious
+	}
+	console.log(init);//not accessible since its block level variable. Undeclared error.
+}	
+
+
+		const							let
+---------------------------------------------|----------------------------------------------------
+1. Declaration and definition needs to	     |	Declaration and definition can be done separately.
+   be done at first.	 		     |	Redeclaration is not possible, but can be redefined.
+	eg. const pi=3.14;		     |		eg. let lName="deen"
+2. Once defined values will remain constant  |	Declaration can be done only once, but definition is
+	function			     |	possilbe multiple times.
+					     |		lName="fareed";
+   					     |
+
+Operators:
+----------
+
+Assignment operator: =
+	eg. num=123;
+
+Arithmetic Operators: + - * / %
+
+Increment and Decrement Operators: ++ and -- respectively
+Post Increment: 
+	x=5;
+	console.log(x++);//the value of x remains same as 5
+	console.log(x);// form the above line x got incremented to x=x+1==>6
+
+Pre Increment:
+	y=3;
+	console.log(++y);//now the value of y becomes 4
+
+Post Decrement: 
+	a=5;
+	console.log(a--);//the value of x remains same as 5
+	console.log(a);// form the above line x got incremented to x=x-1==>4
+
+Pre Increment:
+	b=3;
+	console.log(--y);//now the value of y becomes 2
+
+
+
+Variable comparison:
+--------------------
+console.log(1=="1");o/p: true// double equals to is not advisable in java script since it converts the type and compare the values
+console.log(1==="1");o/p: false// triple equals to strictly check the type and values.
+
+console.log(1!="1"); o/p: false //not double equal to
+console.log(1!=="1");o/p: true //not triple equal to
+
+Other comparison operators: >= <= &&(AND) ||(OR)
+AND:
+x	y	R
+T	T	T
+T	F	F
+F	T	F
+F	F	F
+
+OR:
+x	y	R
+T	T	T
+T	F	T
+F	T	T
+F	F	F
+
+
+
+Conditionals: Truthy/Falsy values
+------------
+
+function truthyVals(){
+if(true){console.log("Truthy Value");}
+if({}){console.log("Truthy Value");}
+if([]){console.log("Truthy Value");}
+if(43){console.log("Truthy Value");}
+if("false"){console.log("Truthy Value");}
+}
+
+
+
+function falsyVals(){
+if(false){console.log("Falsy Value");}
+if(Undefined){console.log("Falsy Value");}
+if(null){console.log("Falsy Value");}
+if(""){console.log("Falsy Value");}
+if(0){console.log("Falsy Value");}
+}
+
+
+	
+
+	
+
+	
+
+
+Conditional Statements:
+----------------------
+
+if else vs switch case
+
+		if else						switch
+---------------------------------------------|----------------------------------------------------
+1. Evaluate only the truthy values and 	     |	Evaluate the type and value then execute the case.
+   execute the respective block.	     |	Redeclaration is not possible, but can be redefined.
+					     |		
+					     |
+let fruit = "apple";			     |	let currency ="Rupees"
+if(fruit==="apple"){			     |	switch(currecy){
+  console.log("Apple fruit");} 		     |		case:'Rupees'
+else if(fruit==="orange"){		     |		console.log("Indian Rupees");
+  console.log("Orange fruit");}		     |		break;
+else   	     				     |		case:'Dollar'		
+  console.log("Not a fruit");		     |		console.log("US Dollars");
+  					     |		break;
+   					     |		default:
+					     |		console.log("Invalid Currency"):
+					     |		break;	
+
+
+Ternary Conditions:
+------------------
+if else can be combindly defined as
+
+let val1=false;
+const val2=val1?"truthy value":"falsy value";
+console.log(val2);
+o/p: falsy value
+
+Loops: while and do-while
+-----
+let index=0;
+	while			 |	do-while
+---------------------------------|------------------------------------
+while(index<10)			 | do6
+{				 |  {
+ console.log(index);		 |    console.log(index);
+ index++;			 |    }while(index++ < 10)
+}				 |
+o/p: prints 0 1 2 3 4 5 6 7 8 9	 | o/p: prints 0 1 2 3 4 5 6 7 8 9
+
+
+String:
+-------
+let str1="Eliyas";	/*}both the declarations
+let str2="Fareedudeen";	*}are acceptable*/
+primitive types can access attributes of objects as the js scripts will convert the primitive types to objects. eg; console.log(str1.length);//o/p:6
+
+
+
+
